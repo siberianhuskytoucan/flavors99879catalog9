@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mock Checkout</title>
+    <style>body{font-family:Arial,Helvetica,sans-serif;padding:24px;background:#f3f4f6} .box{max-width:600px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}</style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Mock Crypto Checkout</h1>
+      <p id="info">Simulated checkout for testing. No real payment will be processed.</p>
+      <div id="product"></div>
+      <p><a href="/">Return to store</a></p>
+    </div>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const productId = params.get('productId');
+      const map = {
+        pfa: 'Passion Fruit Apricot - $4.99',
+        pfk: 'Passion Fruit Kiwi - $4.99',
+        mk: 'Mango Kiwi - $5.49',
+        cc: 'Coca Cola - $2.99',
+        mp: 'Mango Pineapple - $5.49'
+      };
+      document.getElementById('product').textContent = map[productId] || 'Unknown product';
+    </script>
+  </body>
+</html>
